@@ -1,0 +1,4 @@
+baseurl: https://flexisafeweb-dev.azurewebsites.net/
+resetpasswordurl: https://flexisafeweb-dev.azurewebsites.net?resetpwd=true
+dashboardcoversurl: https://flexisafeweb-dev.azurewebsites.net/dashboard/covers
+dashboardurl: https://flexisafeweb-dev.azurewebsites.net/dashboard

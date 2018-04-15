@@ -1,0 +1,28 @@
+customer_page:
+  first_name: ~first_name
+  family_name: ~last_name
+  day: ~randomize ['1','2','3']
+  month: ~randomize ['1','2','3','4','5']
+  year: ~randomize ['1970','1980','1983','1990']
+  email: ~palo_email
+  phone: ~flexi_phone
+
+house_page:
+  street: ~street_address
+  suburb: ~city
+  state: ~randomize ['NSW', 'QLD', 'VIC', 'WA']
+  postcode: ~postcode
+  property: ~randomize ['House', 'Apartment/Unit', 'Townhouse', 'Mansion']
+
+login_page:
+  email: ~email ['jmcevoy+flexisafe7518559@palo-it.com', 'jmcevoy+flexisafe2861578@palo-it.com', 'jmcevoy+flexisafe8670745@palo-it.com']
+  password: ~password ['@Paloit12']
+
+insurance_page:
+  calendar: ~today
+
+reset_password_page:
+  email:
+  password:
+  new_password:
+  confirm_password:
