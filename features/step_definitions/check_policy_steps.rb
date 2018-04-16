@@ -1,8 +1,13 @@
 Given(/^that I am on the landing page$/) do
-  visit SelectPremiumPage
-  # sleep 3
-  # @browser.driver.current_url == "https://flexisafeweb-dev.azurewebsites.net"
+  visit CheckPolicyPage
 end
+
+When(/^I populate policy fields with data$/) do
+  on(CheckPolicyPage).fill_out
+end
+
+
+
 
 Then(/^I am redirected to the premium page$/) do
   sleep 3
@@ -95,5 +100,6 @@ Then(/^I am redirected to the landing page$/) do
     puts("Successfully redirected to 'https://flexisafeweb-dev.azurewebsites.net/' ")
   else
     fail("Redirect failed, current url: #{@browser.driver.current_url}")
-    end
+  end
 end
+

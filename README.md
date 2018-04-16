@@ -74,3 +74,21 @@ fields in the page object
   - day_of_week_abbr
   - sequential([])	
   - sequential(1..4)
+  
+### PageObject
+
+PageObject is a simple gem that assists in creating flexible page objects for testing the application in the browser.
+
+#### Basic Usage
+
+Basic usage can be found on the git repo below: 
+
+[PageObject Github Repo](https://github.com/cheezy/page-object)
+
+For a list of Elements use the wiki below: 
+
+[PageObject Wiki](https://github.com/cheezy/page-object/wiki/Elements)
+
+### Running Tests
+
+Each test is made up of three files. The `.feature` file, found in `features/support`, is the more human readable instructions (written in [Cucumber](https://cucumber.io/docs/reference/ruby)). Right click the `.feature` file from within [RubyMine](https://www.jetbrains.com/ruby/download/) and click the `Run` option (`ctrl + shift + F10`).  

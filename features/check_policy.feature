@@ -1,10 +1,10 @@
-Feature: I am a new user and I want to buy a premium
+Feature: I am a user and I want to check my payout
   Background:
     Given that I am on the landing page
 
     @all
-    Scenario Outline: buy premium
-      When I click on the button "Get Started"
+    Scenario Outline: check payout
+      When I populate policy fields with data
       And I wait "2" second
       Then I am redirected to the premium page
 
@@ -46,21 +46,3 @@ Feature: I am a new user and I want to buy a premium
         |Basic  |
         |Economy|
         |Extra  |
-
-#    Scenario Outline: change premium
-#      When I click on a premium <product>
-#      And I click next
-#      Then I am redirected to the products page
-#
-#      When I click next
-#      Then I am redirected to the customer page
-#
-#      When I click the change link
-#      And I wait "3" second
-#      When I click on another product
-#
-#      Examples:
-#        |product|
-#        |Basic  |
-#        |Economy|
-#        |Extra  |
