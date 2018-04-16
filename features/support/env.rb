@@ -15,6 +15,6 @@ PageObject::PageFactory.routes = {
     #              [ShoppingCartPage, :proceed_to_checkout],
     #              [CheckoutPage, :checkout]]
 
-    :default => [[SelectPremiumPage, :choose_premium]]
+    :default => [[CheckPolicyPage, :choose_premium]]
 }
 
