@@ -18,3 +18,15 @@ end
 And(/^I select the storm data source$/) do
   on(CheckPolicyPage).data_source_details
 end
+
+Then(/^I check the longitude and latitude have been populated$/) do
+  on(CheckPolicyPage).check_lng_lat_fields
+end
+
+And(/^I check the Radii fields have populated$/) do
+  on(CheckPolicyPage).check_radii_fields
+end
+
+And(/^I check the Number of Wind Speed fields have populated$/) do
+  on(CheckPolicyPage).check_no_of_wind_speed_fields
+end
