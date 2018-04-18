@@ -30,3 +30,7 @@ end
 And(/^I check the Number of Wind Speed fields have populated$/) do
   on(CheckPolicyPage).check_no_of_wind_speed_fields
 end
+
+And(/^I check the Payout Pattern fields have populated$/) do
+  on(CheckPolicyPage).check_payout_pattern_fields
+end

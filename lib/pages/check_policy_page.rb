@@ -19,11 +19,12 @@ class CheckPolicyPage
   text_field(:txtRad3, :id => 'txtRad3')
   text_field(:txtRad4, :id => 'txtRad4')
   select_list(:numberOfWindSpeed, :id => 'ddlWS')
-  text_field(:txtws1, id => 'txtws1')
-  text_field(:txtws2, id => 'txtws2')
-  text_field(:txtws3, id => 'txtws3')
-  text_field(:txtws4, id => 'txtws4')
-  text_field(:txtws5, id => 'txtws5')
+  text_field(:txtws1, :id => 'txtws1')
+  text_field(:txtws2, :id => 'txtws2')
+  text_field(:txtws3, :id => 'txtws3')
+  text_field(:txtws4, :id => 'txtws4')
+  text_field(:txtws5, :id => 'txtws5')
+  table(:table, :class => 'table')
 
   def fill_out
     policyId_element.value = "eafabdce-ae78-40bd-8402-289e85fe35c4"
@@ -40,16 +41,16 @@ class CheckPolicyPage
 
   def data_source_details
     dataSource_element[0].focus
-    dataSource_element.options[2].click
+    dataSource_element.options[1].click
     sleep 1
     region_element[0].focus
-    region_element.options[2].click
+    region_element.options[1].click
     sleep 1
     year_element[0].focus
-    year_element.options[2].click
+    year_element.options[1].click
     sleep 1
     storm_element[0].focus
-    storm_element.options[2].click
+    storm_element.options[1].click
   end
 
   def check_lng_lat_fields
@@ -75,20 +76,20 @@ class CheckPolicyPage
         fail("Radii fields not displaying correctly")
       end
     elsif numberOfCircles.to_i == 2
-      if txtRad1_element.style('display') == 'block' && txtRad2_element.style('display') == 'block' && txtRad3_element.style('display') == 'none' && txtRad4_element.style('display') == 'none'
+      if txtRad1_element.style('display') == 'block' && txtRad2_element.style('display') == 'inline-block' && txtRad3_element.style('display') == 'none' && txtRad4_element.style('display') == 'none'
         puts("Radii fields displayed successfully.")
       else
         fail("Radii fields not displaying correctly")
       end
     elsif numberOfCircles.to_i == 3
-      if txtRad1_element.style('display') == 'block' && txtRad2_element.style('display') == 'block' && txtRad3_element.style('display') == 'block' && txtRad4_element.style('display') == 'none'
+      if txtRad1_element.style('display') == 'block' && txtRad2_element.style('display') == 'inline-block' && txtRad3_element.style('display') == 'inline-block' && txtRad4_element.style('display') == 'none'
         puts("Radii fields displayed successfully.")
       else
         fail("Radii fields not displaying correctly")
       end
     else
       if
-      txtRad1_element.style('display') == 'block' && txtRad2_element.style('display') == 'block' && txtRad3_element.style('display') == 'block' && txtRad4_element.style('display') == 'block'
+      txtRad1_element.style('display') == 'block' && txtRad2_element.style('display') == 'inline-block' && txtRad3_element.style('display') == 'inline-block' && txtRad4_element.style('display') == 'inline-block'
         puts("Radii fields displayed successfully.")
       else
         fail("Radii fields not displaying correctly")
@@ -130,6 +131,46 @@ class CheckPolicyPage
         puts("Wind Speed fields displayed successfully.")
       else
         fail("Wind Speed fields not displaying correctly")
+      end
+    end
+  end
+
+  def check_payout_pattern_fields
+    if numberOfCircles.to_i == 1
+      if table_element[1].style('display') == 'table-row' &&
+          table_element[2].style('display') == 'none' &&
+          table_element[3].style('display') == 'none' &&
+          table_element[4].style('display') == 'none'
+        puts("Pay-out Patter fields displayed successfully.")
+      else
+        fail("Pay-out Pattern fields not displaying correctly.")
+      end
+    elsif numberOfCircles.to_i == 2
+      if table_element[1].style('display') == 'table-row' &&
+          table_element[2].style('display') == 'table-row' &&
+          table_element[3].style('display') == 'none' &&
+          table_element[4].style('display') == 'none'
+        puts("Pay-out Patter fields displayed successfully.")
+      else
+        fail("Pay-out Pattern fields not displaying correctly.")
+      end
+    elsif numberOfCircles.to_i == 3
+      if table_element[1].style('display') == 'table-row' &&
+          table_element[2].style('display') == 'table-row' &&
+          table_element[3].style('display') == 'table-row' &&
+          table_element[4].style('display') == 'none'
+        puts("Pay-out Patter fields displayed successfully.")
+      else
+        fail("Pay-out Pattern fields not displaying correctly.")
+      end
+    else
+      if table_element[1].style('display') == 'table-row' &&
+          table_element[2].style('display') == 'table-row' &&
+          table_element[3].style('display') == 'table-row' &&
+          table_element[4].style('display') == 'table-row'
+        puts("Pay-out Patter fields displayed successfully.")
+      else
+        fail("Pay-out Pattern fields not displaying correctly.")
       end
     end
   end

@@ -1,5 +1,7 @@
 # Ruby testing project with cucumber and rspec
 
+Before you can test you need to make sure the `recaptchaDisabled` value in the Application Settings is set to `true`.
+
 ### need to install
 - gem install rails
 - gem install rspec-rails
